@@ -8,8 +8,24 @@ import java.util.Scanner; //Allows you to use the Scanner objects
 
 class Main {
   public static void main(String[] args) {
-    
-    //YOUR CODE HERE
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a fuel efficiency: "); // Stops code to get fuel efficiency
+    double eff = Double.parseDouble(sc.nextLine());
+    System.out.print("Enter a make: "); // Stops code to get car maker
+    String carMake = sc.nextLine();
+    System.out.print("Enter a model: "); // Stops code to get car model
+    String carModel = sc.nextLine();
+    Car vroom = new Car(eff,carMake,carModel);
+
+    System.out.print("Enter amount of gas to add: ");
+    double amount = Double.parseDouble(sc.nextLine()); // Stops code to get amount of gas to add 
+    vroom.addGas(amount);
+    System.out.print("Enter distance to drive: ");
+    double distance = Double.parseDouble(sc.nextLine()); // Stops code to get how far car cam drove
+    vroom.drive(distance);
+    System.out.print("Your " + vroom.getMakeAndModel() + " currently has " + vroom.getGasInTank() + " gallons of gas left in the tank");
+    sc.close();
+    // YOUR CODE HERE
     
   }
   
@@ -24,7 +40,12 @@ class Main {
    * @return YOUR COMMENT HERE
    */
   public static String wordChanger(String word1, int start1, int end1, String word2, int start2, int end2) {
-    //YOUR CODE HERE
-    return "";
+    // Set names
+    String idk1 = word1.substring(start1,end1 + 1);
+    String idk2 = word2.substring(start2,end2 + 1);
+    
+    String combString = idk1 + idk2;
+
+    return combString;
   }
 }
